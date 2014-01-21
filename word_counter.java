@@ -40,10 +40,13 @@ public class word_counter {
 			while (sc.hasNext()) {
 				String thisString = sc.next();
 				thisString = thisString.trim();
-				total_words += num_words(thisString, myLimit);
 
-				if (!thisString.equals("[\\s]*") && !thisString.equals(""))
+				if (!thisString.equals("\\s+") && !thisString.equals(""))
 					number_sentences++;
+				thisString = thisString.replaceAll("\\s+", " ");
+				total_words += num_words(thisString, myLimit);
+//				System.out.println(number_sentences + " " + thisString);
+
 				
 			}
 
@@ -57,10 +60,10 @@ public class word_counter {
 
 	public static int num_words(String sentence, int word_length) {
 		int count = 0;
+		sentence = sentence.replaceAll("[^a-zA-Z0-9\\s]", ""); //trims punctuation
 		String[] array = sentence.trim().split(" ");
 		for (String s : array) {
-			s = s.replaceAll("[^a-zA-Z0-9]", ""); // trim the punctuation. like
-													// "code," -> "code"
+		
 			if (s.length() >= word_length && s.length()!=0) {
 				count++;
 			}

@@ -1,12 +1,13 @@
+
 class argu_parser {
 	private boolean hasFile = false;
 	private String myFileName = null;
 	private String myDelimiters = ".?!";
 	private int myLimit = 3;
-
+	
 	public boolean feedArguments(String[] args) {
 		int argLen = args.length;
-
+		
 		if (argLen > 5) // too many arguments
 		{
 			System.err.println("Too many arguments.");
@@ -15,10 +16,7 @@ class argu_parser {
 
 		for (int i = 0; i < argLen;) // parse arguments. it actually only iterates the elements that have odd indices.
 		{
-//			System.out.println(i);
-//			System.out.println(argLen);
-//			System.out.println(args[i].endsWith(".txt"));
-		
+
 			if (!args[i].startsWith("-")) // not -l or -d. it could only be the file name
 			{
 				if (args[i].endsWith(".txt") && i == (argLen - 1)) {
@@ -31,23 +29,26 @@ class argu_parser {
 				}
 				
 			}
-			if (!(args[i].equals("-d") || args[i].equals("-l"))) // not -d, -l, or file name
+			else if (!(args[i].equals("-d") || !(args[i].equals("-l")))) // not -d, -l, or file name
 			{
 				System.err.println("Illegal arguments.");
 				return false;
 			}
-			if (args[i].equals("-d")) // -d. then the next argument is the string of customized delimiters
+			
+			else if (args[i].equals("-d")) // -d. then the next argument is the string of customized delimiters
 			{
 				if (i < argLen - 1) {
+				
+		
 					setMyDelimiters(new String(args[i + 1]));
 				} else {
 					System.err.println("Illegal arguments.");
 					return false;
 				}
 				i += 2;
-				continue;
+				//continue;
 			}
-			if (args[i].equals("-l")) // -l. then the next argument has to be an integer and is the customized limitation of word length
+			else if (args[i].equals("-l")) // -l. then the next argument has to be an integer and is the customized limitation of word length
 			{
 				if (i < argLen - 1) {
 					if (isInteger(args[i + 1])) {
