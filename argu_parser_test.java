@@ -9,6 +9,7 @@ public class argu_parser_test {
 		argu_parser parser = new argu_parser();
 		String[] args = {"test.txt"};
 		assertTrue(parser.feedArguments(args));
+		assertEquals(3, parser.getMyLimit());
 	}
 	
 	@Test
@@ -16,6 +17,7 @@ public class argu_parser_test {
 		argu_parser parser = new argu_parser();
 		String[] args = {"-d", ".!;?", "test.txt"};
 		assertTrue(parser.feedArguments(args));
+		assertEquals(3, parser.getMyLimit());
 	}
 	
 	@Test
@@ -23,6 +25,7 @@ public class argu_parser_test {
 		argu_parser parser = new argu_parser();
 		String[] args = {"-l", "1", "test.txt"};
 		assertTrue(parser.feedArguments(args));
+		assertEquals(1, parser.getMyLimit());
 	}
 	
 	@Test
@@ -30,6 +33,15 @@ public class argu_parser_test {
 		argu_parser parser = new argu_parser();
 		String[] args = {"-d", ".!;?", "-l", "2", "test.txt"};
 		assertTrue(parser.feedArguments(args));
+		assertEquals(2, parser.getMyLimit());
+	}
+	
+	@Test
+	public void testFeedArgumentsGoodOption5() {
+		argu_parser parser = new argu_parser();
+		String[] args = {"-l", "6", "-d", ".!;?", "test.txt"};
+		assertTrue(parser.feedArguments(args));
+		assertEquals(6, parser.getMyLimit());
 	}
 	
 	@Test
