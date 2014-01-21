@@ -27,7 +27,9 @@ public class word_counter {
 					sc = new Scanner(new File(myFileName));
 				} catch (FileNotFoundException e) {
 					// file not found exception
-					e.printStackTrace();
+					System.err.println("File " + myFileName + " does not exist.");
+//					e.printStackTrace();
+					return;
 				}
 			}
 			double total_words = 0;
