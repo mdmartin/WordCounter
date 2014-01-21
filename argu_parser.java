@@ -38,9 +38,11 @@ class argu_parser {
 			else if (args[i].equals("-d")) // -d. then the next argument is the string of customized delimiters
 			{
 				if (i < argLen - 1) {
-				
+					
+						setMyDelimiters(new String(args[i + 1]));
 		
-					setMyDelimiters(new String(args[i + 1]));
+					
+				
 				} else {
 					System.err.println("Illegal arguments.");
 					return false;
