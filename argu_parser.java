@@ -15,9 +15,9 @@ class argu_parser {
 
 		for (int i = 0; i < argLen;) // parse arguments. it actually only iterates the elements that have odd indices.
 		{
-			System.out.println(i);
-			System.out.println(argLen);
-			System.out.println(args[i].endsWith(".txt"));
+//			System.out.println(i);
+//			System.out.println(argLen);
+//			System.out.println(args[i].endsWith(".txt"));
 		
 			if (!args[i].startsWith("-")) // not -l or -d. it could only be the file name
 			{
