@@ -6,8 +6,10 @@ public class word_counter {
 	public static void main(String[] args) {
 
 		// I'm currently setting all variables and functions in argu_parser as
-		// static variables and functions. What do you think about this
+		// static variables and functions. What do you think about thisi
 
+		//final code
+		
 
 		argu_parser parser = new argu_parser();
 
