@@ -1,0 +1,8 @@
+This is a file to test our project. It will do the average of the number of words per sentence;
+by default we will have a minimal size for the words taken into account. We also have by default some delimiters. To do a good testing, we need to add some delimiters, like the one I just put. 
+We also have to try some tricks like an end of line
+
+in the middle of the sentence.
+
+
+This text is small so we can try the difficult cases. 
