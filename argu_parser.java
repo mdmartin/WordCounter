@@ -24,14 +24,14 @@ class argu_parser {
 					setMyFileName(args[argLen - 1]);
 					break;
 				} else {
-					System.err.println("Illegal arguments.");
+					System.err.println("Illegal file name.");
 					return false;
 				}
 				
 			}
-			else if (!(args[i].equals("-d") || !(args[i].equals("-l")))) // not -d, -l, or file name
+			else if (!(args[i].equals("-d") && !(args[i].equals("-l")))) // not -d, -l, or file name
 			{
-				System.err.println("Illegal arguments.");
+				System.err.println(args[i] + " Illegal arguments.");
 				return false;
 			}
 			
@@ -44,7 +44,7 @@ class argu_parser {
 					
 				
 				} else {
-					System.err.println("Illegal arguments.");
+					System.err.println("No delimiter provided. Please re-run the program with a proper delimiter argument.");
 					return false;
 				}
 				i += 2;
@@ -56,11 +56,11 @@ class argu_parser {
 					if (isInteger(args[i + 1])) {
 						setMyLimit(Integer.valueOf(args[i + 1]));
 					} else {
-						System.err.println("Illegal arguments.");
+						System.err.println("Invalid Integer argument as the word length limitation. Please re-run the program with a proper integer.");
 						return false;
 					}
 				} else {
-					System.err.println("Illegal arguments.");
+					System.err.println("No integer argument for word length limitation provided. Please re-run the program with a proper integer.");
 					return false;
 				}
 				i += 2;
