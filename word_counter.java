@@ -44,7 +44,7 @@ public class word_counter {
 			while (sc.hasNext()) {
 				String thisString = sc.next();
 				thisString = thisString.trim(); //Removes unwanted spaces at the beginning or end of the sentence
-
+				System.out.println(thisString);
 				if (!thisString.equals("\\s+") && !thisString.equals("")) //Does not add 1 to count if there is simply empty space
 					number_sentences++;
 				
