@@ -16,7 +16,6 @@ class argu_parser {
 
 		for (int i = 0; i < argLen;) // parse arguments. it actually only iterates the elements that have odd indices.
 		{
-
 			if (!args[i].startsWith("-")) // not -l or -d. it could only be the file name
 			{
 				if (args[i].endsWith(".txt") && i == (argLen - 1)) {
@@ -27,22 +26,17 @@ class argu_parser {
 					System.err.println("Illegal file name.");
 					return false;
 				}
-				
 			}
-			else if (!(args[i].equals("-d") && !(args[i].equals("-l")))) // not -d, -l, or file name
+			else if (!(args[i].equals("-d") || args[i].equals("-l"))) // not -d, -l, or file name
 			{
-				System.err.println(args[i] + " Illegal arguments.");
+				System.err.println(args[i] + " Improper input argument. Please check user manual.");
 				return false;
 			}
 			
 			else if (args[i].equals("-d")) // -d. then the next argument is the string of customized delimiters
 			{
 				if (i < argLen - 1) {
-					
 						setMyDelimiters(new String(args[i + 1]));
-		
-					
-				
 				} else {
 					System.err.println("No delimiter provided. Please re-run the program with a proper delimiter argument.");
 					return false;
@@ -66,7 +60,6 @@ class argu_parser {
 				i += 2;
 			}
 		}
-
 		return true;
 	}
 
