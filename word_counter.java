@@ -55,13 +55,13 @@ public class word_counter {
 
 	}
 
-	private static int num_words(String sentence, int word_length) {
+	public static int num_words(String sentence, int word_length) {
 		int count = 0;
 		String[] array = sentence.trim().split(" ");
 		for (String s : array) {
 			s = s.replaceAll("[^a-zA-Z0-9]", ""); // trim the punctuation. like
 													// "code," -> "code"
-			if (s.length() >= word_length) {
+			if (s.length() >= word_length && s.length()!=0) {
 				count++;
 			}
 		}
