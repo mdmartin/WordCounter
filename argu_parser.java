@@ -29,7 +29,7 @@ class argu_parser {
 				}
 				
 			}
-			else if (!(args[i].equals("-d") || !(args[i].equals("-l")))) // not -d, -l, or file name
+			else if (!(args[i].equals("-d") && !(args[i].equals("-l")))) // not -d, -l, or file name
 			{
 				System.err.println(args[i] + " Illegal arguments.");
 				return false;
