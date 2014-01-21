@@ -7,7 +7,7 @@ public class word_counter {
 
 		// I'm currently setting all variables and functions in argu_parser as
 		// static variables and functions. What do you think about this
-		// implementation??
+
 
 		argu_parser parser = new argu_parser();
 
