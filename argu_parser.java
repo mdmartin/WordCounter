@@ -43,9 +43,6 @@ class argu_parser {
 			{
 				if (i < argLen - 1) {
 						String a = args[i+1];
-						if(a.contains("\\")) {
-							a = a.replaceAll("\\", "\\\\");
-						}
 						setMyDelimiters(a);
 				} else {
 					System.err.println("No delimiter provided. Please re-run the program with a proper delimiter argument.");
